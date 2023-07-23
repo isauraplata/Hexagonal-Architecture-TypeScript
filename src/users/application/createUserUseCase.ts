@@ -7,10 +7,11 @@ export class CreateUser{
   async run(
     name: string,
     email: string,
-    password: string
+    password: string,
+    numero_servicio: number
   ): Promise<User | null> {
     try {
-      const user= await this.userRepository.createUser(name,email,password);
+      const user= await this.userRepository.createUser(name,email,password,numero_servicio);
       return user;
     } catch (error) {
       return null;

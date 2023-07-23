@@ -5,9 +5,10 @@ export interface UserRepository {
     name: string,
     email: string,
     password: string,
+    numero_servicio: number
   ): Promise<User | null>;
   loginUser(
     email: string,
     password: string,
-  ): Promise<string | null>;
+  ): Promise<string | any>;
 }

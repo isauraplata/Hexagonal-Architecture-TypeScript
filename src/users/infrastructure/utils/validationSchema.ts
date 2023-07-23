@@ -1,6 +1,8 @@
 import Joi from "joi";
 import passwordComplexity from "joi-password-complexity";
 
+//esto evalua que los parametros sean validos en formato
+
 export const signUpBodyValidation=(body:object)=>{
     const schema=Joi.object({
         name:Joi.string().required().label("Name"),
@@ -18,11 +20,3 @@ export const loginBodyValidation=(body:object)=>{
     return schema.validate(body)
 
 }
-
-/* export const refreshTokenValidation=(body)=>{
-    const schema=Joi.object({
-        refreshToken:Joi.string().required().label("refresh Token"),
-       
-    })
-    return schema.validate(body)
-} */

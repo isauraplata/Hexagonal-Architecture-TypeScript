@@ -1,9 +1,7 @@
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt"
 import { Request, Response } from "express";
 import { Login } from "../../application/loginUSeCase";
 import { loginBodyValidation } from "../utils/validationSchema";
-import { any, string } from "joi";
 import genertateTokens from "../utils/generateToke";
 
 export class LoginController {
@@ -18,7 +16,7 @@ export class LoginController {
 
       const userFind= await this.loginUseCase.run(req.body.email,req.body.password)
        if(!userFind){
-        console.log("no lo encontroo, ni modos pa")
+        console.log("no lo encontro, ni modos compadre")
         return res.status(401).json({error:true,message:"Invalid email or password"});
        }
        const {password} :any = userFind

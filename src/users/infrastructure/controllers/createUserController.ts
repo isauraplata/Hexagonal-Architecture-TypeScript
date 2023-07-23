@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { CreateUser } from "../../application/createUserUseCase";
 import { signUpBodyValidation } from "../utils/validationSchema";
 
+
 export class CreateUserController {
   constructor(readonly createUserUseCase: CreateUser) {}
 
@@ -17,12 +18,12 @@ export class CreateUserController {
           .json({ error: error, message: error.details[0].message });
 
       const salt = await bcrypt.genSalt(Number(process.env.SALT));
-      //const salt= await bcrypt.genSalt(Number(10));
       const hashPassword = await bcrypt.hash(req.body.password, salt);
       const user = await this.createUserUseCase.run(
         data.name,
         data.email,
-        hashPassword
+        hashPassword,
+        data.numero_servicio
       );
 
       if (user)
@@ -33,6 +34,7 @@ export class CreateUserController {
             name: user?.name,
             email: user?.email,
             password: user?.password,
+            numero_servicio: user?.numero_servicio
           },
         });
       else

@@ -7,14 +7,15 @@ export class MysqlUserRepository implements UserRepository {
   async createUser(
     name: string,
     email: string,
-    password: string
+    password: string,
+    numero_servicio:number
   ): Promise<User | null> {
     const sql =
-      "INSERT INTO user (name, email, password) VALUES (?, ?, ?)";
-    const params: any[] = [name, email, password];
+      "INSERT INTO user (name, email, password) VALUES (?, ?, ?,?)";
+    const params: any[] = [name, email, password,numero_servicio];
     try {
       const [result]: any = await query(sql, params);
-      return new User(result.insertId, name, email, password);
+      return new User(result.insertId, name, email, password,numero_servicio);
     } catch (error) {
       return null;
     }
