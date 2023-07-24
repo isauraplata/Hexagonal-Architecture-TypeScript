@@ -6,14 +6,14 @@ const sendInformation= async()=>{
     host: "smtp.gmail.com",
     port: 587,
     auth: {
-      user: "isauraplatarojas@gmail.com",
-      pass: "kbjbvcjszajcdrge"
+      user: process.env.NODEMAILER_USER,
+      pass: process.env.NODEMAILER_PASSWORD
     }
   }
   const message = {
-    from:"isauraplatarojas@gmail.com",
+    from:process.env.NODEMAILER_USER,
     to:"yam778123@gmail.com",
-    subject:"AquaTechs",
+    subject:"AquaTech",
     html:template
   }
   const transport = nodemailer.createTransport(config);
