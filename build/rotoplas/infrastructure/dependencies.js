@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getAllStatusController = exports.getAllStatusUseCase = exports.sendStatusController = exports.sendStatusUseCase = exports.mysqlRotoplasRepository = void 0;
+const sendStatusUseCase_1 = require("../application/sendStatusUseCase");
+const sendStatusController_1 = require("./controllers/sendStatusController");
+const MysqlRotoplasRepository_1 = require("./MysqlRotoplasRepository");
+const getAllStatusUseCase_1 = require("../application/getAllStatusUseCase");
+const getAllStatusController_1 = require("./controllers/getAllStatusController");
+exports.mysqlRotoplasRepository = new MysqlRotoplasRepository_1.MysqlRotoplasRepository();
+exports.sendStatusUseCase = new sendStatusUseCase_1.SendStatus(exports.mysqlRotoplasRepository);
+exports.sendStatusController = new sendStatusController_1.SendStatusController(exports.sendStatusUseCase);
+exports.getAllStatusUseCase = new getAllStatusUseCase_1.GetAllStatus(exports.mysqlRotoplasRepository);
+exports.getAllStatusController = new getAllStatusController_1.GetAllStatusController(exports.getAllStatusUseCase);

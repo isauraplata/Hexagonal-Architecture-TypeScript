@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getLevelController = exports.getLevelUseCase = exports.sendLevelController = exports.sendLevelUseCase = exports.mysqlCisternaRepository = void 0;
+const sendLevelUseCase_1 = require("../application/sendLevelUseCase");
+const sendLevelController_1 = require("./controllers/sendLevelController");
+const MysqlCisternaRepository_1 = require("./MysqlCisternaRepository");
+const getAllLevelUseCase_1 = require("../application/getAllLevelUseCase");
+const getAllLevelController_1 = require("./controllers/getAllLevelController");
+exports.mysqlCisternaRepository = new MysqlCisternaRepository_1.MysqlCisternaRepository();
+exports.sendLevelUseCase = new sendLevelUseCase_1.SendLevel(exports.mysqlCisternaRepository);
+exports.sendLevelController = new sendLevelController_1.SendLevelController(exports.sendLevelUseCase);
+exports.getLevelUseCase = new getAllLevelUseCase_1.GetAllLevel(exports.mysqlCisternaRepository);
+exports.getLevelController = new getAllLevelController_1.GetAllLevelsController(exports.getLevelUseCase);

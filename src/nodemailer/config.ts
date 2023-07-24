@@ -21,5 +21,4 @@ const sendInformation= async(nivel:number)=>{
   console.log(info);
 }
 
-
 export default sendInformation;

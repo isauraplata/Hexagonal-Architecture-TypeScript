@@ -25,7 +25,6 @@ export class MysqlRotoplasRepository implements RotoplasRepository {
       const [result]: any = await query(sql, params);
       return new Rotoplas(result.insertId, nivel, nowDate);
     } catch (error) {
-      console.log("errorrr");
       console.log(error);
       return null;
     }

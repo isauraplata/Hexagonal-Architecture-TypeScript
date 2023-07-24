@@ -7,7 +7,6 @@ export class GetAllStatus {
   async run(): Promise<Rotoplas[] | null> {
     try {
       const result= await this.rotoplasRepository.getAll();
-      console.log(result);
       return result;
     } catch (error) {
       return null;
