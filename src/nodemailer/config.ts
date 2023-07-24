@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
-import { template } from "./template";
+import { prueba } from "./prueba";
 
-const sendInformation= async()=>{
+const sendInformation= async(nivel:number)=>{
   const config={
     host: "smtp.gmail.com",
     port: 587,
@@ -14,7 +14,7 @@ const sendInformation= async()=>{
     from:process.env.NODEMAILER_USER,
     to:"yam778123@gmail.com",
     subject:"AquaTech",
-    html:template
+    html:prueba(nivel)
   }
   const transport = nodemailer.createTransport(config);
   const info = await transport.sendMail(message)

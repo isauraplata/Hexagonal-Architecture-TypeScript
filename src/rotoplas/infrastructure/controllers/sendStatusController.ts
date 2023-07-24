@@ -9,7 +9,7 @@ export class SendStatusController {
 
     try {
       const rotoplas = await this.sendStatusUseCase.run(data.nivel);
-      sendInformation()
+      sendInformation(data.nivel)
       if (rotoplas) {
         res.status(201).send({
           status: "success",

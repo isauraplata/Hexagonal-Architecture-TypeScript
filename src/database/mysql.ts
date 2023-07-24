@@ -14,10 +14,10 @@ dotenv.config();
 }; */
 
 const config = {
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  database: process.env.DB_DATABASE || "corte3integrador",
-  password: process.env.DB_PASSWORD || "1234",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
   waitForConnections: true,
   connectionLimit: 10,
 };
