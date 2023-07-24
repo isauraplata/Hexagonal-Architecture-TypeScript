@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { SendLevel } from "../../application/sendLevelUseCase";
-
 export class SendLevelController {
   constructor(readonly sendLevelUseCase: SendLevel) {}
 
@@ -8,8 +7,7 @@ export class SendLevelController {
     const data = req.body;
 
     try {
-      const cisterna = await this.sendLevelUseCase.run(data.nivel)
-
+      const cisterna = await this.sendLevelUseCase.run(data.nivel);
       if (cisterna)
         res.status(201).send({
           status: "success",

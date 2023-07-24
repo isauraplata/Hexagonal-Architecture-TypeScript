@@ -7,15 +7,15 @@ export class GetAllStatusController {
   async run(req: Request, res: Response) {
     try {
       const statuss= await this.getAllStatusUseCase.run();
-      console.log(statuss);
+      console.log({statuss});
       if (statuss)
         res.status(200).send({
           status: "success",
           data: statuss.map((el: any) => {
             return {
               id: el.id,
-              create_at: el.create_at,
-              servicio: el.servicio,
+              nivel: el.nivel,
+              fecha: el.fecha,
             };
           }),
         });

@@ -13,16 +13,12 @@ const port=process.env.PORT_SERVER;
 const now = new Date();
 
 
-
 app.listen(port,()=>{
     console.log("listening on port: "+port)
-    console.log(now);
+    console.log(now.toLocaleString());
     
 });
 
 app.use("/api/user",userRouter);
 app.use("/api/rotoplas",rotoplasRouter);
 app.use("/api/cisterna",cisternaRouter);
-
-
-

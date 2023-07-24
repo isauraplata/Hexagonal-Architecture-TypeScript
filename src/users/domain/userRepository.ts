@@ -4,8 +4,7 @@ export interface UserRepository {
   createUser(
     name: string,
     email: string,
-    password: string,
-    numero_servicio: number
+    password: string
   ): Promise<User | null>;
   loginUser(
     email: string,

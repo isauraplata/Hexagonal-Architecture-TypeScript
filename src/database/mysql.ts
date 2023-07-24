@@ -16,7 +16,7 @@ dotenv.config();
 const config = {
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
-  database: process.env.DB_DATABASE || "linux",
+  database: process.env.DB_DATABASE || "corte3integrador",
   password: process.env.DB_PASSWORD || "1234",
   waitForConnections: true,
   connectionLimit: 10,

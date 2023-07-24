@@ -5,14 +5,14 @@ export class SendStatus{
   constructor(readonly rotoplasRepository: RotoplasRepository) {}
 
   async run(
-    nivel: number,
-    servicio: number
+    nivel: number
   ): Promise<Rotoplas | null> {
     try {
-      const rotoplas= await this.rotoplasRepository.sendStaus(nivel,servicio);
+      const rotoplas= await this.rotoplasRepository.sendStaus(nivel);  
       return rotoplas;
     } catch (error) {
       return null;
     }
   }
+  
 }

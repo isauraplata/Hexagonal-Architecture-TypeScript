@@ -3,6 +3,26 @@ import { Cisterna } from "../domain/cisternaModel";
 import { CisternaRepository } from "../domain/cisternaRepository";
 
 export class MysqlCisternaRepository implements CisternaRepository {
+
+  async getAll(): Promise<Cisterna[] | null> {
+    const sql = "SELECT * FROM cisterna";
+    try {
+      const [data]: any = await query(sql, []);
+      const dataStatus = Object.values(JSON.parse(JSON.stringify(data)));
+
+      return dataStatus.map(
+        (el: any) =>
+          new Cisterna(
+            el.id,
+            el.nivel,
+            el.create_at,
+          )
+      );
+    } catch (error) {
+      return null;
+    }
+  }
+
   async sendLevel(nivel: number): Promise<Cisterna | null> {
     const nowDate = new Date();
     const sql = "INSERT INTO cisterna (nivel, create_at) VALUES (?,?)";
@@ -15,4 +35,5 @@ export class MysqlCisternaRepository implements CisternaRepository {
       return null;
     }
   }
+
 }

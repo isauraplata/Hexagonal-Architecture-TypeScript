@@ -22,8 +22,7 @@ export class CreateUserController {
       const user = await this.createUserUseCase.run(
         data.name,
         data.email,
-        hashPassword,
-        data.numero_servicio
+        hashPassword
       );
 
       if (user)
@@ -33,8 +32,7 @@ export class CreateUserController {
             id: user?.id,
             name: user?.name,
             email: user?.email,
-            password: user?.password,
-            numero_servicio: user?.numero_servicio
+            password: user?.password
           },
         });
       else
