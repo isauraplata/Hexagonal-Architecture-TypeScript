@@ -2,6 +2,7 @@ import Joi from "joi";
 import passwordComplexity from "joi-password-complexity";
 
 //esto evalua que los parametros sean validos en formato
+//valida el req.body
 
 export const signUpBodyValidation=(body:object)=>{
     const schema=Joi.object({

@@ -12,6 +12,7 @@ const config = {
   connectionLimit: 10,
 };
 
+
 const pool = mysql.createPool(config);
 
 export async function query(sql: string, params: any[]) {

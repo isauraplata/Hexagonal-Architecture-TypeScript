@@ -18,20 +18,17 @@ class SendLevelController {
         return __awaiter(this, void 0, void 0, function* () {
             const data = req.body;
             try {
-                const cisterna = yield this.sendLevelUseCase.run(data.nivel);
-                if (cisterna)
-                    res.status(201).send({
-                        status: "success",
-                        data: {
-                            nivel: cisterna === null || cisterna === void 0 ? void 0 : cisterna.nivel,
-                            fecha: cisterna === null || cisterna === void 0 ? void 0 : cisterna.fecha
-                        },
-                    });
-                else
-                    res.status(204).send({
-                        status: "error",
-                        data: "NO fue posible agregar el registro",
-                    });
+                if (data.nivel === 100 || data.nivel === 0) {
+                    const cisterna = yield this.sendLevelUseCase.run(data.nivel);
+                    if (cisterna)
+                        res.status(201).send({
+                            status: "success",
+                            data: {
+                                nivel: cisterna === null || cisterna === void 0 ? void 0 : cisterna.nivel,
+                                fecha: cisterna === null || cisterna === void 0 ? void 0 : cisterna.fecha,
+                            },
+                        });
+                }
             }
             catch (error) {
                 res.status(204).send({

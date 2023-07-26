@@ -12,7 +12,7 @@ const sendInformation= async(nivel:number)=>{
   }
   const message = {
     from:process.env.NODEMAILER_USER,
-    to:"yam778123@gmail.com",
+    to:process.env.NODEMAILER_USER_TO,
     subject:"AquaTech",
     html:prueba(nivel)
   }

@@ -7,20 +7,17 @@ export class SendLevelController {
     const data = req.body;
 
     try {
-      const cisterna = await this.sendLevelUseCase.run(data.nivel);
-      if (cisterna)
-        res.status(201).send({
-          status: "success",
-          data: {
-            nivel: cisterna?.nivel,
-            fecha: cisterna?.fecha
-          },
-        });
-      else
-        res.status(204).send({
-          status: "error",
-          data: "NO fue posible agregar el registro",
-        });
+      if (data.nivel === 100 || data.nivel === 0) {
+        const cisterna = await this.sendLevelUseCase.run(data.nivel);
+        if (cisterna)
+          res.status(201).send({
+            status: "success",
+            data: {
+              nivel: cisterna?.nivel,
+              fecha: cisterna?.fecha,
+            },
+          });
+      }
     } catch (error) {
       res.status(204).send({
         status: "error",
