@@ -1,5 +1,5 @@
-export const prueba=(nivel:number)=>{
- return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+export const template = (nivel: number) => {
+  return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
  <head>
  <!--[if gte mso 9]>
@@ -217,11 +217,6 @@ export const prueba=(nivel:number)=>{
      </tr>
      </table>
      <![endif]-->
-     
- 
- 
-   
-   
  <div class="u-row-container" style="padding: 0px;background-color: transparent">
    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -251,10 +246,6 @@ export const prueba=(nivel:number)=>{
      </div>
    </div>
    </div>
-   
- 
- 
-   
    
      <!--[if gte mso 9]>
        <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;min-width: 320px;max-width: 600px;">
@@ -317,12 +308,10 @@ export const prueba=(nivel:number)=>{
      </td>
    </tr>
  </table>
- 
        </td>
      </tr>
    </tbody>
  </table>
- 
    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
    </div>
  </div>
@@ -450,7 +439,6 @@ export const prueba=(nivel:number)=>{
      </a>
      <!--[if mso]></center></v:roundrect><![endif]-->
  </div>
- 
        </td>
      </tr>
    </tbody>
@@ -464,11 +452,6 @@ export const prueba=(nivel:number)=>{
      </div>
    </div>
    </div>
-   
- 
- 
-   
-   
  <div class="u-row-container" style="padding: 0px;background-color: transparent">
    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -535,10 +518,6 @@ export const prueba=(nivel:number)=>{
    </div>
    </div>
    
- 
- 
-   
-   
  <div class="u-row-container" style="padding: 0px;background-color: transparent">
    <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
      <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
@@ -597,13 +576,10 @@ export const prueba=(nivel:number)=>{
          </a>
        </td></tr>
      </tbody></table>
-     <!--[if (mso)|(IE)]></td><![endif]-->
-     
-     
+     <!--[if (mso)|(IE)]></td><![endif]-->   
      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
    </div>
  </div>
- 
        </td>
      </tr>
    </tbody>
@@ -685,4 +661,4 @@ export const prueba=(nivel:number)=>{
  
  </html>
  `;
-}
+};
